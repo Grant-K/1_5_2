@@ -37,7 +37,8 @@ import PIL.Image, PIL.ImageTk
 img = PIL.Image.open(filename) # create a PIL.Image from the jpg fil
 tkimg = PIL.ImageTk.PhotoImage(img) # convert the PIL.Image to a PIL
 # Add the ImageTk object to the canvas.
-icon = canvas.create_image(150, 250, image = tkimg) # Currently NOT WORKING
+icon = canvas.create_image(150, 250, image = tkimg)
+canvas.tag_lower(icon, check)
 # Enter event loop. This displays the GUI and starts listening for events.
 # The program ends when you close the window.
 root.mainloop() 
