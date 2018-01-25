@@ -10,9 +10,11 @@ canvas.grid() #Puts the canvas in the main Tk window
 
 # Make four objects on the canvas
 checkbox = canvas.create_rectangle(100, 200, 200, 300, dash=[1,4])
-check = canvas.create_line(100, 250, 150, 300, 220, 150, fill='red', width=20)
+check = canvas.create_line(100, 200, 200, 300, 150, 250, 100, 300, 200, 200,fill='red', width=20)
 message = canvas.create_text(380, 250, text='Try this!', font=('Arial', -100))
+myName = canvas.create_text(300, 500, text='Grant Klees', font=('Arial', -115))
 shadow = canvas.create_oval(100, 450, 500, 550, fill='#888888', outline='#888888')
+canvas.tag_raise(myName, shadow)
 
 # Make an array of objects on the canvas
 circles=[]
@@ -20,7 +22,7 @@ for r in range(10, 60, 10):
     circles += [canvas.create_oval(300-r, 400-r, 300+r, 400+r, outline='red')]
 
 # Make one more object on the canvas
-canopy = canvas.create_arc(0, 50, 600, 650, start=30, extent=120, width=50, style=ARC)          
+canopy = canvas.create_arc(0, 50, 600, 650, start=30, extent=120, width=50, style=ARC, outline = '#00ff00')          
 canvas.itemconfig(circles[0], fill = 'black', width = 5)
 e, f, g, h = canvas.coords(circles[0])
 canvas.coords(circles[0], e+5, f, g+5, h)
